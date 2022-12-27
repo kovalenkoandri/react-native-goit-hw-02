@@ -50,6 +50,9 @@ export default function App() {
             <Text style={styles.textShow}>Показать</Text>
           </Pressable>
         </View>
+        <Pressable style={styles.buttonRegister} onPress>
+          <Text style={styles.textRegister}>Зарегистрироваться</Text>
+        </Pressable>
       </View>
     </ImageBackground>
   );
@@ -137,6 +140,23 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     letterSpacing: 0.25,
     color: '#1B4371',
+    fontFamily: 'Roboto',
+  },
+  buttonRegister: {
+    width: 343,
+    height: 51,
+    marginTop: 43,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FF6C00',
+    borderRadius: 100,
+  },
+  textRegister: {
+    fontSize: 16,
+    fontWeight: '400',
+    lineHeight: 19,
+    letterSpacing: 0.25,
+    color: '#fff',
     fontFamily: 'Roboto',
   },
 });
