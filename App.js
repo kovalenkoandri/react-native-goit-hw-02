@@ -23,7 +23,9 @@ export default function App() {
           source={require('./assets/addPhoto.png')}
           style={styles.addPhoto}
         />
-        <Text style={styles.regTitle}>Регистрация</Text>
+        <View style={styles.regTitleWrapper}>
+          <Text style={styles.regTitle}>Регистрация</Text>
+        </View>
         <TextInput
           placeholder="Логин"
           value={loginValue}
@@ -44,8 +46,8 @@ export default function App() {
             style={styles.inputPassword}
             secureTextEntry={true}
           />
-          <Pressable style={styles.button} onPress>
-            <Text style={styles.text}>Показать</Text>
+          <Pressable style={styles.buttonShow} onPress>
+            <Text style={styles.textShow}>Показать</Text>
           </Pressable>
         </View>
       </View>
@@ -73,17 +75,17 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -60,
   },
+  regTitleWrapper: {
+    marginTop: 92,
+  },
   regTitle: {
     fontFamily: 'Roboto',
     fontSize: 30,
     lineHeight: 35,
     color: '#212121',
-    position: 'absolute',
-    top: 92,
   },
   inputLogin: {
-    top: 160,
-    position: 'absolute',
+    marginTop: 32,
     width: 343,
     height: 50,
     borderRadius: 8,
@@ -93,8 +95,7 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
   },
   inputEmail: {
-    top: 226,
-    position: 'absolute',
+    marginTop: 16,
     width: 343,
     height: 50,
     borderRadius: 8,
@@ -106,8 +107,7 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
   },
   inputPasswordWrapper: {
-    top: 292,
-    position: 'absolute',
+    marginTop: 16,
     width: 343,
     height: 50,
   },
@@ -124,19 +124,15 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     justifyContent: 'center',
   },
-  button: {
+  buttonShow: {
     width: 80,
     height: 50,
     marginLeft: 256,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
     backgroundColor: 'transparent',
   },
-  text: {
+  textShow: {
     fontSize: 16,
     lineHeight: 19,
     letterSpacing: 0.25,
