@@ -1,6 +1,16 @@
-import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Image,
+  TextInput,
+} from 'react-native';
+import React, { useState } from 'react';
 
 export default function App() {
+  const [value, setValue] = useState('');
+  const inputHandler = (text) => setValue(text);
   return (
     <ImageBackground style={styles.bg} source={require('./assets/bg.png')}>
       <View style={styles.container}>
@@ -9,6 +19,12 @@ export default function App() {
           style={styles.addPhoto}
         />
         <Text style={styles.regTitle}>Регистрация</Text>
+        <TextInput
+          placeholder="Type text"
+          value={value}
+          onChangeText={inputHandler}
+          style={styles.inputLogin}
+        />
       </View>
     </ImageBackground>
   );
@@ -41,5 +57,16 @@ const styles = StyleSheet.create({
     color: '#212121',
     position: 'absolute',
     top: 92,
+  },
+  inputLogin: {
+    top: 160,
+    position: 'absolute',
+    width: 343,
+    height: 50,
+    borderRadius: 8,
+    backgroundColor: '#F6F6F6',
+    borderWidth: 1,
+    borderColor: '#E8E8E8',
+    borderStyle: 'solid',
   },
 });
