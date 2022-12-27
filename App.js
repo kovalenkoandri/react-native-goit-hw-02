@@ -5,6 +5,7 @@ import {
   ImageBackground,
   Image,
   TextInput,
+  Pressable,
 } from 'react-native';
 import React, { useState } from 'react';
 
@@ -35,13 +36,18 @@ export default function App() {
           onChangeText={inputEmailHandler}
           style={styles.inputEmail}
         />
-        <TextInput
-          placeholder="Пароль"
-          value={passwordValue}
-          onChangeText={inputPasswordHandler}
-          style={styles.inputPassword}
-          secureTextEntry={true}
-        />
+        <View style={styles.inputPasswordWrapper}>
+          <TextInput
+            placeholder="Пароль"
+            value={passwordValue}
+            onChangeText={inputPasswordHandler}
+            style={styles.inputPassword}
+            secureTextEntry={true}
+          />
+          <Pressable style={styles.button} onPress>
+            <Text style={styles.text}>Показать</Text>
+          </Pressable>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -93,22 +99,48 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 8,
     backgroundColor: '#F6F6F6',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#E8E8E8',
+    borderColor: 'red',
     borderStyle: 'solid',
     paddingLeft: 16,
   },
-  inputPassword: {
+  inputPasswordWrapper: {
     top: 292,
+    position: 'absolute',
+    width: 343,
+    height: 50,
+  },
+  inputPassword: {
     position: 'absolute',
     width: 343,
     height: 50,
     borderRadius: 8,
     backgroundColor: '#F6F6F6',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#E8E8E8',
+    borderColor: 'red',
     borderStyle: 'solid',
     paddingLeft: 16,
-    paddingRight: 16,
+    justifyContent: 'center',
+  },
+  button: {
+    width: 80,
+    height: 50,
+    marginLeft: 256,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'transparent',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 19,
+    letterSpacing: 0.25,
+    color: '#1B4371',
+    fontFamily: 'Roboto',
   },
 });
