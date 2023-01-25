@@ -1,5 +1,4 @@
 import {
-  StyleSheet,
   Text,
   View,
   ImageBackground,
@@ -8,6 +7,7 @@ import {
   Pressable,
 } from 'react-native';
 import React, { useState } from 'react';
+import { styles } from './styles';
 
 export default function App() {
   const [loginValue, setLoginValue] = useState('');
@@ -57,106 +57,3 @@ export default function App() {
     </ImageBackground>
   );
 }
-
-const styles = StyleSheet.create({
-  bg: {
-    flex: 1,
-  },
-  container: {
-    alignItems: 'center',
-    marginTop: 263,
-    flex: 1,
-    width: '100%',
-    backgroundColor: '#fff',
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-    position: 'relative',
-  },
-  addPhoto: {
-    width: 132,
-    height: 120,
-    position: 'absolute',
-    top: -60,
-  },
-  regTitleWrapper: {
-    marginTop: 92,
-  },
-  regTitle: {
-    fontFamily: 'Roboto',
-    fontSize: 30,
-    lineHeight: 35,
-    color: '#212121',
-  },
-  inputLogin: {
-    marginTop: 32,
-    width: 343,
-    height: 50,
-    borderRadius: 8,
-    backgroundColor: '#F6F6F6',
-    borderWidth: 1,
-    borderColor: '#E8E8E8',
-    paddingLeft: 16,
-  },
-  inputEmail: {
-    marginTop: 16,
-    width: 343,
-    height: 50,
-    borderRadius: 8,
-    backgroundColor: '#F6F6F6',
-    borderWidth: 2,
-    borderColor: '#E8E8E8',
-    borderColor: 'red',
-    borderStyle: 'solid',
-    paddingLeft: 16,
-  },
-  inputPasswordWrapper: {
-    marginTop: 16,
-    width: 343,
-    height: 50,
-  },
-  inputPassword: {
-    position: 'absolute',
-    width: 343,
-    height: 50,
-    borderRadius: 8,
-    backgroundColor: '#F6F6F6',
-    borderWidth: 2,
-    borderColor: '#E8E8E8',
-    borderColor: 'red',
-    borderStyle: 'solid',
-    paddingLeft: 16,
-    justifyContent: 'center',
-  },
-  buttonShow: {
-    width: 80,
-    height: 50,
-    marginLeft: 256,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  textShow: {
-    fontSize: 16,
-    lineHeight: 19,
-    letterSpacing: 0.25,
-    color: '#1B4371',
-    fontFamily: 'Roboto',
-  },
-  buttonRegister: {
-    width: 343,
-    height: 51,
-    marginTop: 43,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FF6C00',
-    borderRadius: 100,
-  },
-  textRegister: {
-    fontSize: 16,
-    fontWeight: '400',
-    lineHeight: 19,
-    letterSpacing: 0.25,
-    color: '#fff',
-    fontFamily: 'Roboto',
-  },
-});
