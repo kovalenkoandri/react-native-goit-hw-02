@@ -26,19 +26,20 @@ export const LoginScreen = () => {
         <View style={styles.logTitleWrapper}>
           <Text style={styles.regTitle}>Войти</Text>
         </View>
-        <CommonRegisterLogin />
-        <Pressable
-          style={({ pressed }) => [
-            {
-              opacity: pressed ? 0.8 : 1,
-            },
-            styles.buttonRegister,
-          ]}
-          onPress={() => submitHandler({ emailValue, passwordValue })}
-        >
-          <Text style={styles.textRegister}>Войти</Text>
-        </Pressable>
-        <Text style={styles.textShow}>Нет аккаунта? Зарегистрироваться</Text>
+        <CommonRegisterLogin>
+          <Pressable
+            style={({ pressed }) => [
+              {
+                opacity: pressed ? 0.8 : 1,
+              },
+              styles.buttonRegister,
+            ]}
+            onPress={() => submitHandler({ emailValue, passwordValue })}
+          >
+            <Text style={styles.textRegister}>Войти</Text>
+          </Pressable>
+          <Text style={styles.textShow}>Нет аккаунта? Зарегистрироваться</Text>
+        </CommonRegisterLogin>
       </View>
     </ImageBackground>
   );

@@ -8,17 +8,17 @@ import {
 } from 'react-native';
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
-export const CommonRegisterLogin = () => {
-   const {
-     inputEmailHandler,
-     inputPasswordHandler,
-     submitHandler,
-     passHideHandler,
-     hidePass,
-     passwordValue,
-     emailValue,
-   } = ValidateInput();
-    return (
+export const CommonRegisterLogin = ({ children }) => {
+  const {
+    inputEmailHandler,
+    inputPasswordHandler,
+    submitHandler,
+    passHideHandler,
+    hidePass,
+    passwordValue,
+    emailValue,
+  } = ValidateInput();
+  return (
     <>
       <TextInput
         placeholder="Адрес электронной почты"
@@ -43,6 +43,7 @@ export const CommonRegisterLogin = () => {
           </Text>
         </Pressable>
       </View>
+      {children}
     </>
   );
 };

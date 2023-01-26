@@ -23,7 +23,7 @@ export const RegistrationScreen = () => {
   } = ValidateInput();
   return (
     <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
-      <View style={styles.container}>
+      <View style={(styles.containerRegister)}>
         <Image
           source={require('../assets/addPhoto.png')}
           style={styles.addPhoto}
@@ -37,24 +37,23 @@ export const RegistrationScreen = () => {
           onChangeText={inputLoginHandler}
           style={styles.inputLogin}
         />
-        <CommonRegisterLogin/>
-        <Pressable
-          style={({ pressed }) => [
-            {
-              opacity: pressed ? 0.8 : 1,
-            },
-            styles.buttonRegister,
-          ]}
-          onPress={() =>
-            submitHandler({ loginValue, emailValue, passwordValue })
-          }
-        >
-          <Text style={styles.textRegister}>Зарегистрироваться</Text>
-        </Pressable>
-        <Text style={(styles.textShow)}>
-          Уже есть аккаунт? Войти
-        </Text>
+        <CommonRegisterLogin>
+          <Pressable
+            style={({ pressed }) => [
+              {
+                opacity: pressed ? 0.8 : 1,
+              },
+              styles.buttonRegister,
+            ]}
+            onPress={() =>
+              submitHandler({ loginValue, emailValue, passwordValue })
+            }
+          >
+            <Text style={styles.textRegister}>Зарегистрироваться</Text>
+          </Pressable>
+          <Text style={styles.textShow}>Уже есть аккаунт? Войти</Text>
+        </CommonRegisterLogin>
       </View>
     </ImageBackground>
   );
-}
+};

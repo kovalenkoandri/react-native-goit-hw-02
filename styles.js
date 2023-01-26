@@ -6,6 +6,17 @@ export const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     marginTop: 263,
+    paddingTop: 32,
+    flex: 1,
+    width: '100%',
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    position: 'relative',
+  },
+  containerRegister: {
+    alignItems: 'center',
+    marginTop: 263,
     paddingTop: 92,
     flex: 1,
     width: '100%',
