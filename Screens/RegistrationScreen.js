@@ -29,7 +29,7 @@ export const RegistrationScreen = () => {
           style={styles.addPhoto}
         />
         <View style={styles.regTitleWrapper}>
-          <Text style={styles.regTitle}>Регистрация</Text>
+          <Text style={styles.authTitle}>Регистрация</Text>
         </View>
         <TextInput
           placeholder="Логин"

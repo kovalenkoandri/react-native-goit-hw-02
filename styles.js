@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   logTitleWrapper: {
     marginBottom: 33,
   },
-  regTitle: {
+  authTitle: {
     fontFamily: 'Roboto',
     fontSize: 30,
     lineHeight: 35,

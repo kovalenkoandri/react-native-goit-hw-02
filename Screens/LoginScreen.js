@@ -24,7 +24,7 @@ export const LoginScreen = () => {
     <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
       <View style={styles.container}>
         <View style={styles.logTitleWrapper}>
-          <Text style={styles.regTitle}>Войти</Text>
+          <Text style={styles.authTitle}>Войти</Text>
         </View>
         <CommonRegisterLogin>
           <Pressable
