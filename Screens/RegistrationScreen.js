@@ -6,18 +6,20 @@ import {
   TextInput,
   Pressable,
 } from 'react-native';
-import React, { useState } from 'react';
 import { styles } from '../styles';
-
-export function RegistrationScreen() {
-  const [loginValue, setLoginValue] = useState('');
-  const [emailValue, setEmailValue] = useState('');
-  const [passwordValue, setPasswordValue] = useState('');
-  const [hidePass, setHidePass] = useState(true);
-  const inputLoginHandler = (text) => setLoginValue(text);
-  const inputEmailHandler = (text) => setEmailValue(text);
-  const inputPasswordHandler = (text) => setPasswordValue(text);
-  const onSubmitHandler = (creds) => console.log({ ...creds });
+import { ValidateInput } from '../helpers/ValidateInput';
+export const RegistrationScreen = () => {
+  const {
+    inputLoginHandler,
+    inputEmailHandler,
+    inputPasswordHandler,
+    submitHandler,
+    passHideHandler,
+    hidePass,
+    passwordValue,
+    emailValue,
+    loginValue,
+  } = ValidateInput();
   return (
     <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
       <View style={styles.container}>
@@ -50,15 +52,17 @@ export function RegistrationScreen() {
           />
           <Pressable
             style={styles.buttonShow}
-            onPress={() => setHidePass(!hidePass)}
+            onPress={() => passHideHandler(hidePass)}
           >
-            <Text style={styles.textShow}>Показать</Text>
+            <Text style={styles.textShow}>
+              {hidePass ? 'Скрыть' : 'Показать'}
+            </Text>
           </Pressable>
         </View>
         <Pressable
           style={styles.buttonRegister}
           onPress={() =>
-            onSubmitHandler({ loginValue, emailValue, passwordValue })
+            submitHandler({ loginValue, emailValue, passwordValue })
           }
         >
           <Text style={styles.textRegister}>Зарегистрироваться</Text>
