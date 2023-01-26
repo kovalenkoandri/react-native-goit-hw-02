@@ -2,8 +2,6 @@ import {
   Text,
   View,
   ImageBackground,
-  Image,
-  TextInput,
   Pressable,
   KeyboardAvoidingView,
   Platform,
@@ -17,8 +15,6 @@ export const LoginScreen = () => {
     inputEmailHandler,
     inputPasswordHandler,
     submitHandler,
-    passHideHandler,
-    hidePass,
     passwordValue,
     emailValue,
   } = ValidateInput();
@@ -31,7 +27,14 @@ export const LoginScreen = () => {
           <View style={styles.logTitleWrapper}>
             <Text style={styles.authTitle}>Войти</Text>
           </View>
-          <CommonRegisterLogin>
+          <CommonRegisterLogin
+            {...{
+              passwordValue,
+              emailValue,
+              inputEmailHandler,
+              inputPasswordHandler,
+            }}
+          >
             <Pressable
               style={({ pressed }) => [
                 {

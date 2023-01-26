@@ -1,23 +1,19 @@
 import {
   Text,
   View,
-  ImageBackground,
-  Image,
   TextInput,
   Pressable,
 } from 'react-native';
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
-export const CommonRegisterLogin = ({ children }) => {
-  const {
-    inputEmailHandler,
-    inputPasswordHandler,
-    submitHandler,
-    passHideHandler,
-    hidePass,
-    passwordValue,
-    emailValue,
-  } = ValidateInput();
+export const CommonRegisterLogin = ({
+  children,
+  passwordValue,
+  emailValue,
+  inputEmailHandler,
+  inputPasswordHandler,
+}) => {
+  const { passHideHandler, hidePass } = ValidateInput();
   return (
     <>
       <TextInput

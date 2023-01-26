@@ -11,12 +11,6 @@ import {
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
 import { CommonRegisterLogin } from '../helpers/CommonRegisterLogin';
-import { useState } from 'react';
-
-const initialState = {
-  email: '',
-  password: '',
-};
 
 export const RegistrationScreen = () => {
   const {
@@ -24,21 +18,10 @@ export const RegistrationScreen = () => {
     inputEmailHandler,
     inputPasswordHandler,
     submitHandler,
-    passHideHandler,
-    hidePass,
     passwordValue,
     emailValue,
     loginValue,
   } = ValidateInput();
-  const [isShowKeyboard, setIsShowKeyboard] = useState(false);
-  const [state, setstate] = useState(initialState);
-  // const keyboardHide = () => {
-  // setIsShowKeyboard(false);
-  // Keyboard.dismiss();
-  // console.log(state);
-  // setstate(initialState);
-  // console.log(Platform );
-  // };
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
@@ -58,7 +41,14 @@ export const RegistrationScreen = () => {
             onChangeText={inputLoginHandler}
             style={styles.inputLogin}
           />
-          <CommonRegisterLogin>
+          <CommonRegisterLogin
+            {...{
+              passwordValue,
+              emailValue,
+              inputEmailHandler,
+              inputPasswordHandler,
+            }}
+          >
             <Pressable
               style={({ pressed }) => [
                 {
