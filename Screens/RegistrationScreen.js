@@ -60,7 +60,12 @@ export const RegistrationScreen = () => {
           </Pressable>
         </View>
         <Pressable
-          style={styles.buttonRegister}
+          style={({ pressed }) => [
+            {
+              opacity: pressed ? 0.8 : 1,
+            },
+            styles.buttonRegister,
+          ]}
           onPress={() =>
             submitHandler({ loginValue, emailValue, passwordValue })
           }

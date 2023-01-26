@@ -3,8 +3,11 @@ import { RegistrationScreen } from './Screens/RegistrationScreen';
 
 const App = () => {
   return (
-    // <LoginScreen />
-    <RegistrationScreen />
+    <>
+     <LoginScreen />
+    {/* <RegistrationScreen /> */}
+    
+    </>
   );
 };
 export default App;
