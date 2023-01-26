@@ -63,6 +63,9 @@ export function RegistrationScreen() {
         >
           <Text style={styles.textRegister}>Зарегистрироваться</Text>
         </Pressable>
+        <Text style={(styles.textShow, styles.alreadyHaveAccount)}>
+          Уже есть аккаунт? Войти
+        </Text>
       </View>
     </ImageBackground>
   );

@@ -51,12 +51,13 @@ export function LoginScreen() {
         </View>
         <Pressable
           style={styles.buttonRegister}
-          onPress={() =>
-            onSubmitHandler({ emailValue, passwordValue })
-          }
+          onPress={() => onSubmitHandler({ emailValue, passwordValue })}
         >
           <Text style={styles.textRegister}>Зарегистрироваться</Text>
         </Pressable>
+        <Text style={(styles.textShow, styles.alreadyHaveAccount)}>
+          Нет аккаунта? Зарегистрироваться
+        </Text>
       </View>
     </ImageBackground>
   );

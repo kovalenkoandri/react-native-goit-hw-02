@@ -100,4 +100,7 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'Roboto',
   },
+  alreadyHaveAccount: {
+    marginTop: 16,
+  },
 });
