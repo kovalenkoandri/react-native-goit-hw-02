@@ -23,7 +23,7 @@ export const RegistrationScreen = () => {
   } = ValidateInput();
   return (
     <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
-      <View style={(styles.containerRegister)}>
+      <View style={[styles.container, styles.containerRegister]}>
         <Image
           source={require('../assets/addPhoto.png')}
           style={styles.addPhoto}
