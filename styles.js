@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
+
 export const styles = StyleSheet.create({
   bg: {
     flex: 1,
@@ -13,6 +14,17 @@ export const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     position: 'relative',
+    ...Platform.select({
+      ios: {
+        backgroundColor: 'orange',
+      },
+      android: {
+        backgroundColor: 'green',
+      },
+      web: {
+        backgroundColor: '#000',
+      },
+    }),
   },
   containerRegister: {
     paddingTop: 92,
@@ -53,7 +65,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F6F6F6',
     borderWidth: 2,
     borderColor: '#E8E8E8',
-    borderColor: 'red',
+    borderColor: Platform.OS === 'web' ? 'red' : 'green',
     borderStyle: 'solid',
     paddingLeft: 16,
   },
@@ -70,7 +82,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F6F6F6',
     borderWidth: 2,
     borderColor: '#E8E8E8',
-    borderColor: 'red',
+    borderColor: Platform.OS === 'web' ? 'red' : 'green',
     borderStyle: 'solid',
     paddingLeft: 16,
     justifyContent: 'center',

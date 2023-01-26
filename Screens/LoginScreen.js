@@ -5,6 +5,8 @@ import {
   Image,
   TextInput,
   Pressable,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
@@ -21,26 +23,32 @@ export const LoginScreen = () => {
     emailValue,
   } = ValidateInput();
   return (
-    <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
-      <View style={styles.container}>
-        <View style={styles.logTitleWrapper}>
-          <Text style={styles.authTitle}>Войти</Text>
+    <KeyboardAvoidingView
+      behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+    >
+      <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
+        <View style={styles.container}>
+          <View style={styles.logTitleWrapper}>
+            <Text style={styles.authTitle}>Войти</Text>
+          </View>
+          <CommonRegisterLogin>
+            <Pressable
+              style={({ pressed }) => [
+                {
+                  opacity: pressed ? 0.8 : 1,
+                },
+                styles.buttonRegister,
+              ]}
+              onPress={() => submitHandler({ emailValue, passwordValue })}
+            >
+              <Text style={styles.textRegister}>Войти</Text>
+            </Pressable>
+            <Text style={styles.textShow}>
+              Нет аккаунта? Зарегистрироваться
+            </Text>
+          </CommonRegisterLogin>
         </View>
-        <CommonRegisterLogin>
-          <Pressable
-            style={({ pressed }) => [
-              {
-                opacity: pressed ? 0.8 : 1,
-              },
-              styles.buttonRegister,
-            ]}
-            onPress={() => submitHandler({ emailValue, passwordValue })}
-          >
-            <Text style={styles.textRegister}>Войти</Text>
-          </Pressable>
-          <Text style={styles.textShow}>Нет аккаунта? Зарегистрироваться</Text>
-        </CommonRegisterLogin>
-      </View>
-    </ImageBackground>
+      </ImageBackground>
+    </KeyboardAvoidingView>
   );
 };
