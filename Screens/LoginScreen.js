@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { styles } from '../styles';
 import { ValidateInput } from '../helpers/ValidateInput';
+import { CommonRegisterLogin } from '../helpers/CommonRegisterLogin';
 
 export const LoginScreen = () => {
   const {
@@ -22,36 +23,10 @@ export const LoginScreen = () => {
   return (
     <ImageBackground style={styles.bg} source={require('../assets/bg.png')}>
       <View style={styles.container}>
-        <Image
-          source={require('../assets/addPhoto.png')}
-          style={styles.addPhoto}
-        />
-        <View style={styles.regTitleWrapper}>
+        <View style={styles.logTitleWrapper}>
           <Text style={styles.regTitle}>Войти</Text>
         </View>
-        <TextInput
-          placeholder="Адрес электронной почты"
-          value={emailValue}
-          onChangeText={inputEmailHandler}
-          style={styles.inputEmail}
-        />
-        <View style={styles.inputPasswordWrapper}>
-          <TextInput
-            placeholder="Пароль"
-            value={passwordValue}
-            onChangeText={inputPasswordHandler}
-            style={styles.inputPassword}
-            secureTextEntry={hidePass ? true : false}
-          />
-          <Pressable
-            style={styles.buttonShow}
-            onPress={() => passHideHandler(hidePass)}
-          >
-            <Text style={styles.textShow}>
-              {hidePass ? 'Скрыть' : 'Показать'}
-            </Text>
-          </Pressable>
-        </View>
+        <CommonRegisterLogin />
         <Pressable
           style={({ pressed }) => [
             {
@@ -61,11 +36,9 @@ export const LoginScreen = () => {
           ]}
           onPress={() => submitHandler({ emailValue, passwordValue })}
         >
-          <Text style={styles.textRegister}>Зарегистрироваться</Text>
+          <Text style={styles.textRegister}>Войти</Text>
         </Pressable>
-        <Text style={(styles.textShow, styles.alreadyHaveAccount)}>
-          Нет аккаунта? Зарегистрироваться
-        </Text>
+        <Text style={styles.textShow}>Нет аккаунта? Зарегистрироваться</Text>
       </View>
     </ImageBackground>
   );

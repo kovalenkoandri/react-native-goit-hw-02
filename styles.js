@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     marginTop: 263,
+    paddingTop: 92,
     flex: 1,
     width: '100%',
     backgroundColor: '#fff',
@@ -20,7 +21,10 @@ export const styles = StyleSheet.create({
     top: -60,
   },
   regTitleWrapper: {
-    marginTop: 92,
+    marginBottom: 33,
+  },
+  logTitleWrapper: {
+    marginBottom: 33,
   },
   regTitle: {
     fontFamily: 'Roboto',
@@ -29,7 +33,7 @@ export const styles = StyleSheet.create({
     color: '#212121',
   },
   inputLogin: {
-    marginTop: 32,
+    marginBottom: 16,
     width: 343,
     height: 50,
     borderRadius: 8,
@@ -39,7 +43,7 @@ export const styles = StyleSheet.create({
     paddingLeft: 16,
   },
   inputEmail: {
-    marginTop: 16,
+    marginBottom: 16,
     width: 343,
     height: 50,
     borderRadius: 8,
@@ -51,7 +55,7 @@ export const styles = StyleSheet.create({
     paddingLeft: 16,
   },
   inputPasswordWrapper: {
-    marginTop: 16,
+    marginBottom: 43,
     width: 343,
     height: 50,
   },
@@ -84,9 +88,9 @@ export const styles = StyleSheet.create({
     fontFamily: 'Roboto',
   },
   buttonRegister: {
+    marginBottom: 16,
     width: 343,
     height: 51,
-    marginTop: 43,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FF6C00',
@@ -99,8 +103,5 @@ export const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: '#fff',
     fontFamily: 'Roboto',
-  },
-  alreadyHaveAccount: {
-    marginTop: 16,
   },
 });
